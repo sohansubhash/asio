@@ -1,0 +1,49 @@
+[
+  [
+	"Site Name",
+	{
+	  "domain": "example.com",
+	  "additional-domains": [
+		"example.net"
+	  ],
+	  "tfa": [
+		"sms",
+		"call",
+		"email",
+		"totp",
+		"u2f",
+		"custom-software",
+		"custom-hardware"
+	  ],
+	  "custom-software": [
+		"Authy"
+	  ],
+	  "documentation": "<link to site TFA documentation>",
+	  "recovery": "<link to site TFA recovery documentation>",
+	  "keywords": [
+		"keyword1",
+		"keyword2"
+	  ]
+	}
+  ]
+]
+
+only domain and keywords will always be defined
+
+omit:
+domain
+img
+contact
+regions
+keywords
+
+transform:
+"Site Name" -> name
+url -> metadata/url (if url field is empty, generate url from domain by prepending https:// )
+documentation -> metadata/documentation
+recovery -> metadata/recovery-documentation
+tfa -> supports/tfa
+notes -> supports/notes
+custom-(software|hardware) -> enabled/custom-(software|hardware)
+
+

@@ -1,0 +1,94 @@
+{
+  "accounts": [
+    {
+      "id": "account_1",
+      "name": "Sample Account 1",
+      "metadata": {
+        "url": "https://example.com",
+        "documentation": "https://example.com/docs",
+        "recovery-documentation": "https://example.com/recovery"
+      },
+      "supports": {
+        "recovery": ["email", "phone", "passphrase", "file", "codes"],
+        "tfa": [
+          "sms",
+          "call",
+          "email",
+          "totp",
+          "u2f",
+          "custom-software",
+          "custom-hardware"
+        ],
+        "notes": "Additional notes about the account"
+      },
+      "enabled": {
+        "sms": ["phone_number_987", "phone_number_654"],
+        "call": ["phone_number_987"],
+        "email": ["email_123", "email_456"],
+        "totp": ["software_token_789"],
+        "u2f": ["yubikey_123", "yubikey_456"],
+        "custom-software": ["custom_software_1", "custom_software_2"],
+        "custom-hardware": ["custom_hardware_1", "custom_hardware_2"]
+      }
+    }
+  ],
+  "hardware_authenticators": [
+    {
+      "id": "yubikey_123",
+      "model": "YubiKey Model XYZ",
+      "type": "USB",
+      "name": "Personal YubiKey"
+    },
+    {
+      "id": "yubikey_456",
+      "model": "YubiKey Model ABC",
+      "type": "NFC",
+      "name": "Work YubiKey"
+    }
+  ],
+  "software_authenticators": [
+    {
+      "id": "software_token_789",
+      "type": "TOTP",
+      "name": "Google Authenticator"
+    },
+    {
+      "id": "custom_software_1",
+      "type": "Custom Software",
+      "name": "Custom Software 1"
+    },
+    {
+      "id": "custom_software_2",
+      "type": "Custom Software",
+      "name": "Custom Software 2"
+    }
+  ],
+  "phone_numbers": [
+    {
+      "id": "phone_number_987",
+      "type": "voip",
+      "provider": "VoIP Provider XYZ",
+      "name": "Personal VoIP Number"
+    },
+    {
+      "id": "phone_number_654",
+      "type": "esim",
+      "provider": "eSIM Provider ABC",
+      "name": "Work eSIM Number"
+    }
+  ],
+  "emails": [
+    {
+      "id": "email_123",
+      "type": "personal",
+      "provider": "Email Provider XYZ",
+      "name": "Personal Email"
+    },
+    {
+      "id": "email_456",
+      "type": "work",
+      "provider": "Work Email Provider ABC",
+      "name": "Work Email"
+    }
+  ]
+}
